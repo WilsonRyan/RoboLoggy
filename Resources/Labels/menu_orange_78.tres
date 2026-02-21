@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://c0tfrqh8lyrgh"]
+
+[ext_resource type="FontFile" uid="uid://b05kse73u7gas" path="res://Assets/Fonts/Webfonts B/kenney_pixel-webfont.woff2" id="1_rdbki"]
+
+[resource]
+font = ExtResource("1_rdbki")
+font_size = 78
+font_color = Color(1, 0.63529414, 0, 1)
+outline_color = Color(0, 0, 0, 1)

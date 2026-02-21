@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://cx4b31u7ylryu"]
+
+[ext_resource type="FontFile" uid="uid://dmwbsuq6koaeq" path="res://Assets/Fonts/Kenney Thick.ttf" id="1_cyyqy"]
+
+[resource]
+font = ExtResource("1_cyyqy")
+font_size = 42

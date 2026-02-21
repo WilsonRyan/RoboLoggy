@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://bp3alwr2gjw0d"]
+
+[ext_resource type="Texture2D" uid="uid://dr4hmigiyqea1" path="res://Assets/Textures/gray.png" id="1_7fvcn"]
+[ext_resource type="LabelSettings" uid="uid://cx4b31u7ylryu" path="res://Resources/Labels/menuTitle_white_42.tres" id="1_clov2"]
+[ext_resource type="Script" uid="uid://dxp5n66x1hckg" path="res://Scenes/Menus/MenuMain.gd" id="1_w5a0r"]
+[ext_resource type="LabelSettings" uid="uid://b6xxf6rqjm8mu" path="res://Resources/Labels/menu_white_78.tres" id="2_7fvcn"]
+
+[node name="MenuMain" type="Control" unique_id=442530990]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+script = ExtResource("1_w5a0r")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2004774734]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_7fvcn")
+
+[node name="MainMenuMC" type="MarginContainer" parent="." unique_id=2027443171]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 200
+
+[node name="TitleLabel" type="Label" parent="MainMenuMC" unique_id=184740025]
+layout_mode = 2
+size_flags_vertical = 0
+text = "ROBO LOGGY"
+label_settings = ExtResource("1_clov2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBMainMenu" type="VBoxContainer" parent="MainMenuMC" unique_id=1521944702]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="PlayLabel" type="Label" parent="MainMenuMC/VBMainMenu" unique_id=721805780]
+layout_mode = 2
+text = "Play Game"
+label_settings = ExtResource("2_7fvcn")
+
+[node name="OptionsLabel" type="Label" parent="MainMenuMC/VBMainMenu" unique_id=48797283]
+layout_mode = 2
+text = "Options"
+label_settings = ExtResource("2_7fvcn")
+
+[node name="ExitLabel" type="Label" parent="MainMenuMC/VBMainMenu" unique_id=1702399504]
+layout_mode = 2
+text = "Exit"
+label_settings = ExtResource("2_7fvcn")
