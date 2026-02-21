@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var game_grid: TileMapLayer = $GameGrid
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
