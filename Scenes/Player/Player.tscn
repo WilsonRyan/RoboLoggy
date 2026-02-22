@@ -1,14 +1,19 @@
 [gd_scene format=3 uid="uid://cbwliwkhpm3ub"]
 
+[ext_resource type="Script" uid="uid://wt7v2tu14dj0" path="res://Scenes/Player/Player.gd" id="1_ft8w5"]
 [ext_resource type="Texture2D" uid="uid://dmbhn63nh028p" path="res://Assets/Textures/player_roboLoggy.png" id="1_s0eop"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l3ax4"]
 size = Vector2(28, 26)
 
 [node name="Player" type="CharacterBody2D" unique_id=478480706]
+script = ExtResource("1_ft8w5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=850787347]
 texture = ExtResource("1_s0eop")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=666861007]
 shape = SubResource("RectangleShape2D_l3ax4")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1504842363]
+zoom = Vector2(2, 2)

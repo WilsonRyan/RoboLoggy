@@ -1,3 +1,8 @@
+2026-02-13 AM
+Pushed: Camera zoom and player moves across a grid
+Learned: How to have a player character move in a grid square
+Next: Camera locked to just where the tiles are. Add the "forklift" obstacles
+
 2026-02-12 PM
 Pushed: Concrete grid with a custom robot sprite as the Player
 Learning: How to draw a grid and create custom grid asset from Aseprite

@@ -26,4 +26,4 @@ tile_map_data = PackedByteArray("AAAAAAAAAwADAAAAAAAAAAEAAwAEAAAAAAAAAAIAAwAEAAA
 tile_set = SubResource("TileSet_ln2h6")
 
 [node name="Player" parent="GameGrid" unique_id=478480706 instance=ExtResource("3_xbxml")]
-position = Vector2(208, 208)
+position = Vector2(240, 495)
