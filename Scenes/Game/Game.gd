@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var game_grid: TileMapLayer = $GameGrid
+@onready var player: CharacterBody2D = $Player
 
 
 # Called when the node enters the scene tree for the first time.

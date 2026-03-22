@@ -1,3 +1,8 @@
+2026-03-22 AM
+Pushed: Player movement is locked to the size of the tile map and fixed a bug that would teleport the player out of the tile map when you move
+Learned: How to move across tile maps instead of using global position values
+Next: Camera lock to just where the tiles are.
+
 2026-02-13 AM
 Pushed: Camera zoom and player moves across a grid
 Learned: How to have a player character move in a grid square
