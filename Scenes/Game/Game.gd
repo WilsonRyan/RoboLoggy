@@ -1,6 +1,5 @@
 extends Node2D
 
-@onready var game_grid: TileMapLayer = $GameGrid
 @onready var player: CharacterBody2D = $Player
 
 

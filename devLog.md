@@ -1,3 +1,8 @@
+2026-03-23 AM
+Pushed: Camera is locked to the tile map +1 tiles worth of border
+Learned: To flip back and forth between pixels and tiles with camera and player movement
+Next: Create a working hazard square. Player moves into acid and game ends.
+
 2026-03-22 AM
 Pushed: Player movement is locked to the size of the tile map and fixed a bug that would teleport the player out of the tile map when you move
 Learned: How to move across tile maps instead of using global position values

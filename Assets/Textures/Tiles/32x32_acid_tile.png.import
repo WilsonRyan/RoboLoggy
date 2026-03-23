@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlbnh6nlbkgx4"
-path="res://.godot/imported/concreteFloor.png-3b4956a8631464dc365f13eb6566b561.ctex"
+uid="uid://bkg55t77w5gct"
+path="res://.godot/imported/32x32_acid_tile.png-53a8ac2d5325a05800cdd67a80abbe6e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/concreteFloor.png"
-dest_files=["res://.godot/imported/concreteFloor.png-3b4956a8631464dc365f13eb6566b561.ctex"]
+source_file="res://Assets/Textures/Tiles/32x32_acid_tile.png"
+dest_files=["res://.godot/imported/32x32_acid_tile.png-53a8ac2d5325a05800cdd67a80abbe6e.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var camera_2d: Camera2D = $Camera2D
-@onready var game_grid: TileMapLayer = $"../GameGrid"
+@onready var game_grid: TileMapLayer = $"../Node2D/GameGrid"
 
 
 var _tile_size: float = 32
@@ -13,6 +13,7 @@ var _map_size: Vector2i = Vector2i.ZERO
 func _ready() -> void:
 	_player_tile = Vector2i((position - Vector2(_half_tile, _half_tile)) / _tile_size)
 	_map_size = game_grid.get_used_rect().size + Vector2i(-1,-1)
+	camera_clamp((_map_size.x + 2) * 32, (_map_size.y + 2) * 32)
 	print("Map Size: ", _map_size)
 	print("Player tile position: ", _player_tile)
 
@@ -66,6 +67,8 @@ func camera_zoom(dir: String) -> void: #string = "in" or "out"
 	else:
 		print("input needs to be either IN or OUT")
 
-#func camera_clamp() -> void:
-	#camera_2d.limit_top = 0
-	#camera_2d.limit_bottom = 0
+func camera_clamp(right: int, bottom: int) -> void:
+	camera_2d.limit_top = -32
+	camera_2d.limit_bottom = bottom
+	camera_2d.limit_left = -32
+	camera_2d.limit_right = right

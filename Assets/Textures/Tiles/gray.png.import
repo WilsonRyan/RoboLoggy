@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hurt5cgw2ist"
-path="res://.godot/imported/concreteFloor_grid.png-9a6ac054b6b3ea5421c81a4cc1aa99d2.ctex"
+uid="uid://dr4hmigiyqea1"
+path="res://.godot/imported/gray.png-87629b4a30a1ea41cac5559676e08d7a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/concreteFloor_grid.png"
-dest_files=["res://.godot/imported/concreteFloor_grid.png-9a6ac054b6b3ea5421c81a4cc1aa99d2.ctex"]
+source_file="res://Assets/Textures/Tiles/gray.png"
+dest_files=["res://.godot/imported/gray.png-87629b4a30a1ea41cac5559676e08d7a.ctex"]
 
 [params]
 
