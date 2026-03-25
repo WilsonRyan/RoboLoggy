@@ -1,3 +1,8 @@
+2026-03-25 AM
+Pushed: Working hazard acid square that ends the game
+Learned: Pausing and inheriting processing for different scenes in a scene
+Next: Create a horizontally moving hazard
+
 2026-03-23 AM
 Pushed: Camera is locked to the tile map +1 tiles worth of border
 Learned: To flip back and forth between pixels and tiles with camera and player movement

@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://hhnhhxgjs8pf"]
+
+[ext_resource type="Script" uid="uid://degvp6t0864rb" path="res://Scenes/GameUI/GameUi.gd" id="1_81r78"]
+[ext_resource type="LabelSettings" uid="uid://bgpj08msn352j" path="res://Resources/Labels/gameOver_red_42.tres" id="2_556m7"]
+[ext_resource type="FontFile" uid="uid://b05kse73u7gas" path="res://Assets/Fonts/Webfonts B/kenney_pixel-webfont.woff2" id="3_iq8cv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jwnss"]
+font = ExtResource("3_iq8cv")
+font_size = 54
+
+[node name="GameUI" type="Control" unique_id=613047463]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_81r78")
+
+[node name="GameOverUI" type="Control" parent="." unique_id=765215919]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="GameOverUI" unique_id=2026220792]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.4392157, 0, 0, 0.3019608)
+
+[node name="MarginContainer" type="MarginContainer" parent="GameOverUI" unique_id=73004809]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxGameOver" type="VBoxContainer" parent="GameOverUI/MarginContainer" unique_id=1389671570]
+layout_mode = 2
+
+[node name="LabelTopSpace" type="Label" parent="GameOverUI/MarginContainer/VBoxGameOver" unique_id=1551860397]
+layout_mode = 2
+text = "
+
+
+
+
+
+
+"
+
+[node name="LabelGameOver" type="Label" parent="GameOverUI/MarginContainer/VBoxGameOver" unique_id=1515154072]
+layout_mode = 2
+text = "GAME OVER"
+label_settings = ExtResource("2_556m7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelBtwnSpace" type="Label" parent="GameOverUI/MarginContainer/VBoxGameOver" unique_id=620605632]
+layout_mode = 2
+text = "
+
+
+
+
+
+
+"
+
+[node name="LabelPressEscape" type="Label" parent="GameOverUI/MarginContainer/VBoxGameOver" unique_id=1357911093]
+layout_mode = 2
+text = "Press Escape
+to return to menu"
+label_settings = SubResource("LabelSettings_jwnss")
+horizontal_alignment = 1
+vertical_alignment = 1

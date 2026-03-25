@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var camera_2d: Camera2D = $Camera2D
-@onready var game_grid: TileMapLayer = $"../Node2D/GameGrid"
+@onready var game_grid: TileMapLayer = $"../Tiles/GameGrid"
 
 
 var _tile_size: float = 32
