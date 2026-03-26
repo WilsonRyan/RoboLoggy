@@ -1,3 +1,8 @@
+2026-03-26 AM
+Pushed: Created a forklift sprite within Aseprite as the moving hazard
+Learned: Some more practice with Aseprite
+Next: Code in the hazard and movement for the forklift
+
 2026-03-25 AM
 Pushed: Working hazard acid square that ends the game
 Learned: Pausing and inheriting processing for different scenes in a scene
