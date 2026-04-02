@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bkg55t77w5gct" path="res://Assets/Textures/Tiles/32x32_acid_tile.png" id="3_ln2h6"]
 [ext_resource type="PackedScene" uid="uid://cbwliwkhpm3ub" path="res://Scenes/Player/Player.tscn" id="3_xbxml"]
 [ext_resource type="PackedScene" uid="uid://hhnhhxgjs8pf" path="res://Scenes/GameUI/GameUi.tscn" id="5_y3kpf"]
+[ext_resource type="PackedScene" uid="uid://ct84ccdoiijdo" path="res://Scenes/Hazards/Forklift/Forklift.tscn" id="6_3k6gv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xbxml"]
 texture = ExtResource("2_gwu2e")
@@ -55,3 +56,6 @@ position = Vector2(176, 304)
 visible = false
 size_flags_horizontal = 4
 size_flags_vertical = 4
+
+[node name="Forklift" parent="." unique_id=46054915 instance=ExtResource("6_3k6gv")]
+position = Vector2(208, 240)

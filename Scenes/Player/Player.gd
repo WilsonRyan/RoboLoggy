@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var game_grid: TileMapLayer = $"../Tiles/GameGrid"
+@onready var hitbox: Area2D = $Hitbox
 
 
 var _tile_size: float = 32
@@ -72,3 +73,8 @@ func camera_clamp(right: int, bottom: int) -> void:
 	camera_2d.limit_bottom = bottom
 	camera_2d.limit_left = -32
 	camera_2d.limit_right = right
+
+
+func _on_hitbox_area_entered(_area: Area2D) -> void:
+	SignalHub.emit_on_player_takes_dmg()
+	

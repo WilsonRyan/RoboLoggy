@@ -1,3 +1,8 @@
+2026-04-02 AM
+Pushed: Forklift hazard is created, forklift kills player and moves in 1 direction
+Learned: Remembered how the SignalHub works with hitboxes
+Next: Forklift can detect the edge of the map, other hazards, and acid, then will do a 180 degree turn and keep moving.
+
 2026-03-26 AM
 Pushed: Created a forklift sprite within Aseprite as the moving hazard
 Learned: Some more practice with Aseprite
