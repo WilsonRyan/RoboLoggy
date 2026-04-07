@@ -31,4 +31,9 @@ collision_mask = 2
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_l3ax4")
 
+[node name="MoveTimer" type="Timer" parent="." unique_id=608634391]
+wait_time = 0.1
+one_shot = true
+
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="MoveTimer" to="." method="_on_move_timer_timeout"]

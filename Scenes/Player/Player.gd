@@ -3,16 +3,21 @@ extends CharacterBody2D
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var game_grid: TileMapLayer = $"../Tiles/GameGrid"
 @onready var hitbox: Area2D = $Hitbox
+@onready var move_timer: Timer = $MoveTimer
 
 
 var _tile_size: float = 32
 var _player_tile: Vector2i = Vector2i.ZERO
 var _half_tile: float = _tile_size/2
 var _map_size: Vector2i = Vector2i.ZERO
+var _last_tile: Vector2i = Vector2i.ZERO
+var _can_move: bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	SignalHub.on_player_hits_wall.connect(on_player_hits_wall)
 	_player_tile = Vector2i((position - Vector2(_half_tile, _half_tile)) / _tile_size)
+	_last_tile = _player_tile
 	_map_size = game_grid.get_used_rect().size + Vector2i(-1,-1)
 	camera_clamp((_map_size.x + 2) * 32, (_map_size.y + 2) * 32)
 	print("Map Size: ", _map_size)
@@ -34,20 +39,30 @@ func _unhandled_input(_event: InputEvent) -> void:
 
 func get_input_direction() -> Vector2i:
 	var md: Vector2i = Vector2i.ZERO
-	if Input.is_action_just_pressed("left"):
+	if _can_move == false:
+		return md
+	elif Input.is_action_just_pressed("left"):
 		md = Vector2i.LEFT
+		reset_move_timer()
 	elif Input.is_action_just_pressed("right"):
 		md = Vector2i.RIGHT
+		reset_move_timer()
 	elif Input.is_action_just_pressed("up"):
 		md = Vector2i.UP
+		reset_move_timer()
 	elif Input.is_action_just_pressed("down"):
 		md = Vector2i.DOWN
+		reset_move_timer()
 	return md
 
 
+func reset_move_timer() -> void:
+	move_timer.start()
+	_can_move = false
 
 func player_move(md: Vector2i) -> void:
 	var dest: Vector2i = _player_tile + md
+	_last_tile = _player_tile
 	move_player_on_tile(dest)
 
 func move_player_on_tile(tile_coord: Vector2i) -> void:
@@ -75,6 +90,15 @@ func camera_clamp(right: int, bottom: int) -> void:
 	camera_2d.limit_right = right
 
 
+func on_player_hits_wall() -> void:
+	move_player_on_tile(_last_tile)
+	_last_tile = _player_tile
+	print("HIT WALL")
+
 func _on_hitbox_area_entered(_area: Area2D) -> void:
 	SignalHub.emit_on_player_takes_dmg()
-	
+
+
+func _on_move_timer_timeout() -> void:
+	_can_move = true
+	print("CAN MOVE NOW!")

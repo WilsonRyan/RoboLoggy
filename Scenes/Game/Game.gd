@@ -2,9 +2,11 @@ extends Node2D
 
 @onready var player: CharacterBody2D = $Player
 @onready var game_grid: TileMapLayer = $Tiles/GameGrid
-@onready var acid_tile: TileMapLayer = $Tiles/AcidTile
+@onready var acid_tiles: TileMapLayer = $Tiles/AcidTiles
 @onready var tiles: Node2D = $Tiles
 @onready var game_ui: Control = $CanvasLayer/GameUI
+@onready var wall_tiles: TileMapLayer = $Tiles/WallTiles
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -16,6 +18,8 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if tile_is_acid(player._player_tile) == true:
 		game_over()
+	if tile_is_wall(player._player_tile) == true:
+		SignalHub.emit_on_player_hits_wall()
 
 func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("test") == true:
@@ -31,8 +35,10 @@ func game_over() -> void:
 	player.get_tree().paused = true
 
 func tile_is_acid(tile: Vector2i) -> bool:
-	return tile in acid_tile.get_used_cells()
+	return tile in acid_tiles.get_used_cells()
 
+func tile_is_wall(tile: Vector2i) -> bool:
+	return tile in wall_tiles.get_used_cells()
 
 func on_player_takes_dmg() -> void:
 	game_over()

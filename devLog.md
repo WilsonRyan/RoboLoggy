@@ -1,3 +1,8 @@
+2026-04-07 AM
+Pushed: Wall tiles and player can't move through wall tiles
+Learned: Needed to add a move timer to prevent clipping through the wall
+Next: Forklift can detect walls and acid, then will do a 180 degree turn and keep moving
+
 2026-04-02 AM
 Pushed: Forklift hazard is created, forklift kills player and moves in 1 direction
 Learned: Remembered how the SignalHub works with hitboxes
