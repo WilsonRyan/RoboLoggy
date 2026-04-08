@@ -26,18 +26,24 @@ sources/3 = SubResource("TileSetAtlasSource_xbxml")
 texture = ExtResource("3_ln2h6")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="TileSet" id="TileSet_3k6gv"]
 tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_y3kpf")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gvja8"]
 texture = ExtResource("4_1q8bt")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)
 
 [sub_resource type="TileSet" id="TileSet_m1o7v"]
 tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 0
 sources/2 = SubResource("TileSetAtlasSource_gvja8")
 
 [node name="Game" type="Node2D" unique_id=1213937416]
@@ -72,4 +78,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Forklift" parent="." unique_id=46054915 instance=ExtResource("6_3k6gv")]
-position = Vector2(208, 240)
+position = Vector2(240, 144)
+SPEED = 50.0
+DIRECTION = Vector2(0, 1)

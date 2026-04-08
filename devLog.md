@@ -1,5 +1,10 @@
+2026-04-08 AM
+Pushed: Forklift detects walls and acid now and does a 180 degree turn to keep moving
+Learned: How to use the move_and_collide Godot function
+Next: Add a conveyer belt scene that will move the player in the direction of the conveyer belt
+
 2026-04-07 AM
-Pushed: Wall tiles and player can't move through wall tiles
+Pushed: Wall tiles and player can't move through new wall tiles
 Learned: Needed to add a move timer to prevent clipping through the wall
 Next: Forklift can detect walls and acid, then will do a 180 degree turn and keep moving
 
