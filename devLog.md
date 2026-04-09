@@ -1,7 +1,12 @@
+2026-04-09 AM
+Pushed: Made a cardboard box that will be the objective
+Learned: Pickups should be Area2Ds, not Node2Ds
+Next: Make the cardboard box able to be picked up and moved by the player
+
 2026-04-08 AM
 Pushed: Forklift detects walls and acid now and does a 180 degree turn to keep moving
 Learned: How to use the move_and_collide Godot function
-Next: Add a conveyer belt scene that will move the player in the direction of the conveyer belt
+Next: Decide what the "objective" of the game is...
 
 2026-04-07 AM
 Pushed: Wall tiles and player can't move through new wall tiles

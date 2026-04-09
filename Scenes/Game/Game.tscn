@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://pxywg6vw6usx" path="res://Assets/Textures/Tiles/32x32_tile_steelWall.png" id="4_1q8bt"]
 [ext_resource type="PackedScene" uid="uid://hhnhhxgjs8pf" path="res://Scenes/GameUI/GameUi.tscn" id="5_y3kpf"]
 [ext_resource type="PackedScene" uid="uid://ct84ccdoiijdo" path="res://Scenes/Hazards/Forklift/Forklift.tscn" id="6_3k6gv"]
+[ext_resource type="PackedScene" uid="uid://5ijf3dnubkec" path="res://Scenes/Pickups/Package/Package.tscn" id="8_gvja8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xbxml"]
 texture = ExtResource("2_gwu2e")
@@ -67,8 +68,8 @@ tile_set = SubResource("TileSet_m1o7v")
 
 [node name="Player" parent="." unique_id=478480706 instance=ExtResource("3_xbxml")]
 process_mode = 1
-z_index = 1
-position = Vector2(176, 304)
+z_index = 2
+position = Vector2(176, 690)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1539652984]
 
@@ -81,3 +82,7 @@ size_flags_vertical = 4
 position = Vector2(240, 144)
 SPEED = 50.0
 DIRECTION = Vector2(0, 1)
+
+[node name="Package" parent="." unique_id=609638376 instance=ExtResource("8_gvja8")]
+z_index = 3
+position = Vector2(336, 560)

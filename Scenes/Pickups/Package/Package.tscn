@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://5ijf3dnubkec"]
+
+[ext_resource type="Texture2D" uid="uid://e3iw4ywtdovx" path="res://Assets/Textures/16x16_cardboardBox_v2.png" id="1_1gb0h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j4er7"]
+size = Vector2(16, 16)
+
+[node name="Package" type="Area2D" unique_id=609638376]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=575071374]
+texture = ExtResource("1_1gb0h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1366415735]
+shape = SubResource("RectangleShape2D_j4er7")
