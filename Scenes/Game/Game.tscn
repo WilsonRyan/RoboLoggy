@@ -69,7 +69,7 @@ tile_set = SubResource("TileSet_m1o7v")
 [node name="Player" parent="." unique_id=478480706 instance=ExtResource("3_xbxml")]
 process_mode = 1
 z_index = 2
-position = Vector2(176, 690)
+position = Vector2(304, 178)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1539652984]
 
@@ -85,4 +85,4 @@ DIRECTION = Vector2(0, 1)
 
 [node name="Package" parent="." unique_id=609638376 instance=ExtResource("8_gvja8")]
 z_index = 3
-position = Vector2(336, 560)
+position = Vector2(335, 112)

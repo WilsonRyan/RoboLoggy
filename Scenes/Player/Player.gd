@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var hitbox: Area2D = $Hitbox
 @onready var move_timer: Timer = $MoveTimer
 
+const PACKAGE = preload("uid://5ijf3dnubkec")
 
 var _tile_size: float = 32
 var _player_tile: Vector2i = Vector2i.ZERO
@@ -12,10 +13,12 @@ var _half_tile: float = _tile_size/2
 var _map_size: Vector2i = Vector2i.ZERO
 var _last_tile: Vector2i = Vector2i.ZERO
 var _can_move: bool = true
+var _has_pickup: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SignalHub.on_player_hits_wall.connect(on_player_hits_wall)
+	SignalHub.on_player_moves_with_pickup.connect(on_player_moves_with_pickup)
 	_player_tile = Vector2i((position - Vector2(_half_tile, _half_tile)) / _tile_size)
 	_last_tile = _player_tile
 	_map_size = game_grid.get_used_rect().size + Vector2i(-1,-1)
@@ -35,7 +38,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 	var md: Vector2i = get_input_direction()
 	if md != Vector2i.ZERO:
 		player_move(md)
-		print("Player tile position: ", _player_tile)
+		#print("Player tile position: ", _player_tile)
 
 func get_input_direction() -> Vector2i:
 	var md: Vector2i = Vector2i.ZERO
@@ -56,6 +59,10 @@ func get_input_direction() -> Vector2i:
 	return md
 
 
+func move_package() -> void:
+	if _has_pickup == true:
+		print("has pickup")
+
 func reset_move_timer() -> void:
 	move_timer.start()
 	_can_move = false
@@ -72,6 +79,7 @@ func move_player_on_tile(tile_coord: Vector2i) -> void:
 		return
 	position = Vector2(tile_coord * _tile_size) + Vector2(_half_tile, _half_tile)
 	_player_tile = tile_coord
+	move_package()
 
 func camera_zoom(dir: String) -> void: #string = "in" or "out"
 	if dir == "in": 
@@ -93,12 +101,18 @@ func camera_clamp(right: int, bottom: int) -> void:
 func on_player_hits_wall() -> void:
 	move_player_on_tile(_last_tile)
 	_last_tile = _player_tile
-	print("HIT WALL")
 
-func _on_hitbox_area_entered(_area: Area2D) -> void:
-	SignalHub.emit_on_player_takes_dmg()
+func on_player_moves_with_pickup(_dest: Vector2i) -> void:
+	pass
 
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	if area.is_in_group("pickup"):
+		print("Pickup")
+		_has_pickup = true
+	else:
+		SignalHub.emit_on_player_takes_dmg()
+	
 
 func _on_move_timer_timeout() -> void:
 	_can_move = true
-	print("CAN MOVE NOW!")

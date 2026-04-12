@@ -1,3 +1,8 @@
+2026-04-12 AM
+Pushed: The pickup detects when it's getting picked up
+Learned: How to add objects to groups and detect what is colliding with which group
+Next: Have the cardboard box actually move with the player once its picked up
+
 2026-04-09 AM
 Pushed: Made a cardboard box that will be the objective
 Learned: Pickups should be Area2Ds, not Node2Ds
