@@ -1,3 +1,8 @@
+2026-04-13 AM
+Pushed: The package is now carried by the player when picked up
+Learned: Originally once the player picked up one package, both packages would get carried by the player, so I learned how to distinguish and manipulate the position of different instantiations of the same scene. 
+Next: Place the package in a drop off location
+
 2026-04-12 AM
 Pushed: The pickup detects when it's getting picked up
 Learned: How to add objects to groups and detect what is colliding with which group

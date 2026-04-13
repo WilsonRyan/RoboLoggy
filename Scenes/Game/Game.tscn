@@ -84,5 +84,7 @@ SPEED = 50.0
 DIRECTION = Vector2(0, 1)
 
 [node name="Package" parent="." unique_id=609638376 instance=ExtResource("8_gvja8")]
-z_index = 3
-position = Vector2(335, 112)
+position = Vector2(336, 111)
+
+[node name="Package2" parent="." unique_id=147699037 instance=ExtResource("8_gvja8")]
+position = Vector2(338, 272)

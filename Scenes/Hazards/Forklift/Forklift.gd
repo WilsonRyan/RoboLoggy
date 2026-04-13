@@ -1,13 +1,18 @@
 extends CharacterBody2D
 
+class_name Forklift
+
 #SPEED = .5 is 1 grid square per second
 @export var SPEED: float = 10
 @export var DIRECTION: Vector2 = Vector2.LEFT
+
+@onready var hitbox: Area2D = $Hitbox
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	face_forward()
+	hitbox.add_to_group("Forklifts")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
