@@ -116,7 +116,8 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 	elif area.is_in_group("dropPoints") and held_package != null:
 		held_package.drop_off()
 		held_package = null
-		print("drop box please")
+	elif area is Gate:
+		on_player_hits_wall()
 
 
 func _on_move_timer_timeout() -> void:

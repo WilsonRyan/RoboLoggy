@@ -28,6 +28,8 @@ func drop_off() -> void:
 	set_deferred("monitorable", false)
 	global_position += (carry_offset) * -1
 	remove_from_group("pickups")
+	if get_tree().get_nodes_in_group("pickups").size() == 0:
+		SignalHub.emit_on_all_packages_delivered()
 
 func on_player_moves_with_pickup() -> void:
 	position = _player_ref.global_position + carry_offset

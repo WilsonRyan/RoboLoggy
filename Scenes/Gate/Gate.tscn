@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://dx7mun71i4506"]
+
+[ext_resource type="Script" uid="uid://dfl7kxg1sagah" path="res://Scenes/Gate/Gate.gd" id="1_7oqkr"]
+[ext_resource type="Texture2D" uid="uid://dkfqiky1yilor" path="res://Assets/Textures/128x32_greenAccordianGate.png" id="1_s07d6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7oqkr"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogjmn"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s07d6"]
+size = Vector2(128, 31)
+
+[sub_resource type="Animation" id="Animation_7oqkr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_s07d6"]
+resource_name = "close"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [4, 3, 2, 1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_q4sr8"]
+resource_name = "open"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 4, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s07d6"]
+_data = {
+&"RESET": SubResource("Animation_7oqkr"),
+&"close": SubResource("Animation_s07d6"),
+&"open": SubResource("Animation_q4sr8")
+}
+
+[node name="Gate" type="Area2D" unique_id=81968588]
+collision_layer = 4
+script = ExtResource("1_7oqkr")
+
+[node name="leftOpenCollisionShape2D" type="CollisionShape2D" parent="." unique_id=952452449]
+position = Vector2(-48, 0)
+shape = SubResource("RectangleShape2D_7oqkr")
+
+[node name="rightOpenCollisionShape2D2" type="CollisionShape2D" parent="." unique_id=287332362]
+position = Vector2(48, 0)
+shape = SubResource("RectangleShape2D_ogjmn")
+
+[node name="closedCollisionShape2D" type="CollisionShape2D" parent="." unique_id=690168721]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_s07d6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1177331457]
+texture = ExtResource("1_s07d6")
+hframes = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=390154157]
+libraries/ = SubResource("AnimationLibrary_s07d6")
+
+[node name="Timer" type="Timer" parent="." unique_id=1600599123]

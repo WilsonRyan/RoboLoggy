@@ -1,4 +1,9 @@
 2026-04-15 AM
+Pushed: Working gate that opens and closes when the player delivers all of the packages
+Learned: Remembered how to use the animation player
+Next: Need to fix the bug where the player "bounces" off the gate and that the player can drop off multiple packages at the same drop point
+
+2026-04-15 AM
 Pushed: The player can now place the package in a goal
 Learned: Distinguished between _process and _physics_process and how to add and subtract objects from a "group"
 Next: Create an EXIT DOOR that is closed when there are packages in the "pickups" group, but opens when there is none
