@@ -1,3 +1,8 @@
+2026-04-15 AM
+Pushed: The player can now place the package in a goal
+Learned: Distinguished between _process and _physics_process and how to add and subtract objects from a "group"
+Next: Create an EXIT DOOR that is closed when there are packages in the "pickups" group, but opens when there is none
+
 2026-04-13 AM
 Pushed: The package is now carried by the player when picked up
 Learned: Originally once the player picked up one package, both packages would get carried by the player, so I learned how to distinguish and manipulate the position of different instantiations of the same scene. 

@@ -111,8 +111,12 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area is Package and held_package == null:
 		held_package = area
 		held_package.pick_up(self)
-	elif area.is_in_group("Forklifts") :
+	elif area.is_in_group("Forklifts"):
 		SignalHub.emit_on_player_takes_dmg()
+	elif area.is_in_group("dropPoints") and held_package != null:
+		held_package.drop_off()
+		held_package = null
+		print("drop box please")
 
 
 func _on_move_timer_timeout() -> void:

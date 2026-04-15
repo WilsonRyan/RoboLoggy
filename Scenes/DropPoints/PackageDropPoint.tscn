@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://x3v3kqijxqne"]
+
+[ext_resource type="Texture2D" uid="uid://bjo1a8eh684sv" path="res://Assets/Textures/32x32_dropoffLocation.png" id="1_717bs"]
+[ext_resource type="Script" uid="uid://ditvayxc28jco" path="res://Scenes/DropPoints/PackageDropPoint.gd" id="1_v7461"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7461"]
+
+[node name="PackageDropPoint" type="Area2D" unique_id=481246673]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_v7461")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=709986038]
+texture = ExtResource("1_717bs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=172129126]
+shape = SubResource("RectangleShape2D_v7461")

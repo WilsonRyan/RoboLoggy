@@ -92,6 +92,7 @@ escape={
 2d_physics/layer_2="Hazards"
 2d_physics/layer_3="Walls"
 2d_physics/layer_4="Pickup"
+2d_physics/layer_5="DropPoint"
 
 [physics]
 

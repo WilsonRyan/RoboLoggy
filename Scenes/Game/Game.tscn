@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://hhnhhxgjs8pf" path="res://Scenes/GameUI/GameUi.tscn" id="5_y3kpf"]
 [ext_resource type="PackedScene" uid="uid://ct84ccdoiijdo" path="res://Scenes/Hazards/Forklift/Forklift.tscn" id="6_3k6gv"]
 [ext_resource type="PackedScene" uid="uid://5ijf3dnubkec" path="res://Scenes/Pickups/Package/Package.tscn" id="8_gvja8"]
+[ext_resource type="PackedScene" uid="uid://x3v3kqijxqne" path="res://Scenes/DropPoints/PackageDropPoint.tscn" id="9_m1o7v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xbxml"]
 texture = ExtResource("2_gwu2e")
@@ -88,3 +89,11 @@ position = Vector2(336, 111)
 
 [node name="Package2" parent="." unique_id=147699037 instance=ExtResource("8_gvja8")]
 position = Vector2(338, 272)
+
+[node name="PackageDropPoint" parent="." unique_id=481246673 instance=ExtResource("9_m1o7v")]
+position = Vector2(176, 400)
+rotation = -1.5707964
+
+[node name="PackageDropPoint2" parent="." unique_id=1854901285 instance=ExtResource("9_m1o7v")]
+position = Vector2(240, 400)
+rotation = 1.5707964
