@@ -18,8 +18,8 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if tile_is_acid(player._player_tile) == true:
 		game_over()
-	if tile_is_wall(player._player_tile) == true:
-		SignalHub.emit_on_player_hits_wall()
+	#if tile_is_wall(player._player_tile) == true:
+	#	SignalHub.emit_on_player_hits_wall()
 
 func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("test") == true:

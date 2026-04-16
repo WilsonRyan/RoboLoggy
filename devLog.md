@@ -1,3 +1,8 @@
+2026-04-16 AM
+Pushed: Using raycasts to detect whether the player can move, which prevents the "bouncing" off of walls
+Learned: How to disable collision shapes, how to manipulate rayCasts, and organizing RayCasts into Node2Ds
+Next: Make it so the player can only drop off packages at EMPTY drop points
+
 2026-04-15 AM
 Pushed: Working gate that opens and closes when the player delivers all of the packages
 Learned: Remembered how to use the animation player

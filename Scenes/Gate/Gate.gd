@@ -4,7 +4,7 @@ class_name Gate
 
 @onready var timer: Timer = $Timer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-
+@onready var closed_collision_shape_2d: CollisionShape2D = $closedCollisionShape2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,12 +20,14 @@ func open() -> void:
 	animation_player.play("open")
 	set_deferred("monitoring", false)
 	set_deferred("monitorable", false)
+	closed_collision_shape_2d.set_deferred("disabled", true)
 	print("gate opens")
 
 func close() -> void:
 	animation_player.play("close")
 	set_deferred("monitoring", true)
 	set_deferred("monitorable", true)
+	closed_collision_shape_2d.set_deferred("disabled", false)
 	print("gate closed")
 
 

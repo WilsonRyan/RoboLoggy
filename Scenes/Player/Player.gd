@@ -1,3 +1,5 @@
+#this is tall crabb
+
 extends CharacterBody2D
 
 class_name Player
@@ -6,6 +8,10 @@ class_name Player
 @onready var game_grid: TileMapLayer = $"../Tiles/GameGrid"
 @onready var hitbox: Area2D = $Hitbox
 @onready var move_timer: Timer = $MoveTimer
+@onready var up_ray_cast_2d: RayCast2D = $RayCasts/up_RayCast2D
+@onready var down_ray_cast_2d: RayCast2D = $RayCasts/down_RayCast2D
+@onready var right_ray_cast_2d: RayCast2D = $RayCasts/right_RayCast2D
+@onready var left_ray_cast_2d: RayCast2D = $RayCasts/left_RayCast2D
 
 var _player_tile: Vector2i = Vector2i.ZERO
 var _map_size: Vector2i = Vector2i.ZERO
@@ -41,28 +47,38 @@ func _unhandled_input(_event: InputEvent) -> void:
 	if md != Vector2i.ZERO:
 		player_move(md)
 
+
 func get_input_direction() -> Vector2i:
 	var md: Vector2i = Vector2i.ZERO
 	if _can_move == false:
 		return md
 	elif Input.is_action_just_pressed("left"):
 		md = Vector2i.LEFT
+		if raycast_colliding(left_ray_cast_2d) == true:
+			return Vector2i.ZERO
 		reset_move_timer()
 	elif Input.is_action_just_pressed("right"):
 		md = Vector2i.RIGHT
+		if raycast_colliding(right_ray_cast_2d) == true:
+			return Vector2i.ZERO
 		reset_move_timer()
 	elif Input.is_action_just_pressed("up"):
 		md = Vector2i.UP
+		if raycast_colliding(up_ray_cast_2d) == true:
+			return Vector2i.ZERO
 		reset_move_timer()
 	elif Input.is_action_just_pressed("down"):
 		md = Vector2i.DOWN
+		if raycast_colliding(down_ray_cast_2d) == true:
+			return Vector2i.ZERO
 		reset_move_timer()
 	return md
 
-
-func reset_move_timer() -> void:
-	move_timer.start()
-	_can_move = false
+func raycast_colliding(ray: RayCast2D) -> bool:
+	if ray.is_colliding() == true:
+		return true
+	else:
+		return false
 
 func player_move(md: Vector2i) -> void:
 	var dest: Vector2i = _player_tile + md
@@ -76,6 +92,12 @@ func move_player_on_tile(tile_coord: Vector2i) -> void:
 		return
 	position = GlobalFunctions.TILE_TO_POSITION(tile_coord)
 	_player_tile = tile_coord
+
+func reset_move_timer() -> void:
+	move_timer.start()
+	_can_move = false
+
+
 
 func camera_zoom(dir: String) -> void: #string = "in" or "out"
 	if dir == "in": 

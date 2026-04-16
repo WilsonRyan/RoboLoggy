@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://dmbhn63nh028p" path="res://Assets/Textures/player_roboLoggy.png" id="1_s0eop"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ft8w5"]
-size = Vector2(30, 23)
+size = Vector2(24, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l3ax4"]
-size = Vector2(30, 23)
+size = Vector2(24, 20)
 
 [node name="Player" type="CharacterBody2D" unique_id=478480706]
 z_index = 6
@@ -21,19 +21,44 @@ texture = ExtResource("1_s0eop")
 zoom = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=165694347]
-position = Vector2(0, 1.5)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_ft8w5")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=2011256595]
 collision_mask = 30
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=666861007]
-position = Vector2(0, 1.5)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_l3ax4")
 
 [node name="MoveTimer" type="Timer" parent="." unique_id=608634391]
 wait_time = 0.1
 one_shot = true
+
+[node name="RayCasts" type="Node2D" parent="." unique_id=1554276696]
+
+[node name="up_RayCast2D" type="RayCast2D" parent="RayCasts" unique_id=1215973948]
+rotation = -3.1415925
+target_position = Vector2(0, 25)
+collision_mask = 4
+collide_with_areas = true
+
+[node name="down_RayCast2D" type="RayCast2D" parent="RayCasts" unique_id=1287770126]
+target_position = Vector2(0, 25)
+collision_mask = 4
+collide_with_areas = true
+
+[node name="right_RayCast2D" type="RayCast2D" parent="RayCasts" unique_id=1944573309]
+rotation = -1.5707964
+target_position = Vector2(0, 25)
+collision_mask = 4
+collide_with_areas = true
+
+[node name="left_RayCast2D" type="RayCast2D" parent="RayCasts" unique_id=263806877]
+rotation = 1.5707964
+target_position = Vector2(0, 25)
+collision_mask = 4
+collide_with_areas = true
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="timeout" from="MoveTimer" to="." method="_on_move_timer_timeout"]
