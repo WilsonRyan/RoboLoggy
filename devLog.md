@@ -1,5 +1,15 @@
+2026-04-18 AM
+Pushed: Drop points only accept one package now and walking through an open gate makes the player win! (MVP GAME LOOP COMPELTE)
+Learned: A signal thrown to a scene will activate the Signal for ALL nodes in the group if the Signal is connected in the _ready() function
+Next: Level selection button in the menu, with seperate level menu to select from
+
+2026-04-17 AM
+Pushed: nothing yet
+Learned: more work with groups
+Next: finish debugging the removal of just ONE node in a group depending on which DropPoint node is closest the the player. Right now it just does the removal until there are no more nodes left in the DropPoint group
+
 2026-04-16 AM
-Pushed: Using raycasts to detect whether the player can move, which prevents the "bouncing" off of walls
+Pushed: Using raycasts to detect whether the player can move, which prevents the 'bouncing' off of walls
 Learned: How to disable collision shapes, how to manipulate rayCasts, and organizing RayCasts into Node2Ds
 Next: Make it so the player can only drop off packages at EMPTY drop points
 

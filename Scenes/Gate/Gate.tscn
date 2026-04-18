@@ -68,6 +68,9 @@ _data = {
 &"open": SubResource("Animation_q4sr8")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0alm"]
+size = Vector2(128, 14)
+
 [node name="Gate" type="Area2D" unique_id=81968588]
 collision_layer = 4
 script = ExtResource("1_7oqkr")
@@ -92,3 +95,11 @@ hframes = 5
 libraries/ = SubResource("AnimationLibrary_s07d6")
 
 [node name="Timer" type="Timer" parent="." unique_id=1600599123]
+
+[node name="finishLine" type="Area2D" parent="." unique_id=1117084295]
+collision_layer = 128
+
+[node name="finishCollisionShape2D" type="CollisionShape2D" parent="finishLine" unique_id=1269253584]
+shape = SubResource("RectangleShape2D_b0alm")
+
+[connection signal="body_entered" from="finishLine" to="." method="_on_finish_line_body_entered"]

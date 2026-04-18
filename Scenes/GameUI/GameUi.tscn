@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://hhnhhxgjs8pf"]
 
 [ext_resource type="Script" uid="uid://degvp6t0864rb" path="res://Scenes/GameUI/GameUi.gd" id="1_81r78"]
-[ext_resource type="LabelSettings" uid="uid://bgpj08msn352j" path="res://Resources/Labels/gameOver_red_42.tres" id="2_556m7"]
+[ext_resource type="LabelSettings" uid="uid://dk76ibfyjrxbb" path="res://Resources/Labels/youWin_white_42.tres" id="2_556m7"]
 [ext_resource type="FontFile" uid="uid://b05kse73u7gas" path="res://Assets/Fonts/Webfonts B/kenney_pixel-webfont.woff2" id="3_iq8cv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jwnss"]
@@ -18,6 +18,7 @@ grow_vertical = 2
 script = ExtResource("1_81r78")
 
 [node name="GameOverUI" type="Control" parent="." unique_id=765215919]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -83,6 +84,79 @@ text = "
 "
 
 [node name="LabelPressEscape" type="Label" parent="GameOverUI/MarginContainer/VBoxGameOver" unique_id=1357911093]
+layout_mode = 2
+text = "Press Escape
+to return to menu"
+label_settings = SubResource("LabelSettings_jwnss")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WinUI" type="Control" parent="." unique_id=1495538556]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="WinUI" unique_id=1919700794]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.09019608, 1, 0, 0.3019608)
+
+[node name="MarginContainer" type="MarginContainer" parent="WinUI" unique_id=118999816]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxGameOver" type="VBoxContainer" parent="WinUI/MarginContainer" unique_id=716066255]
+layout_mode = 2
+
+[node name="LabelTopSpace" type="Label" parent="WinUI/MarginContainer/VBoxGameOver" unique_id=1289773530]
+layout_mode = 2
+text = "
+
+
+
+
+
+
+"
+
+[node name="LabelGameOver" type="Label" parent="WinUI/MarginContainer/VBoxGameOver" unique_id=391752142]
+layout_mode = 2
+text = "You Win"
+label_settings = ExtResource("2_556m7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelBtwnSpace" type="Label" parent="WinUI/MarginContainer/VBoxGameOver" unique_id=102614877]
+layout_mode = 2
+text = "
+
+
+
+
+
+
+"
+
+[node name="LabelPressEscape" type="Label" parent="WinUI/MarginContainer/VBoxGameOver" unique_id=1927791169]
 layout_mode = 2
 text = "Press Escape
 to return to menu"

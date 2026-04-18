@@ -93,6 +93,7 @@ escape={
 2d_physics/layer_3="Walls"
 2d_physics/layer_4="Pickup"
 2d_physics/layer_5="DropPoint"
+2d_physics/layer_8="FinishLine"
 
 [physics]
 

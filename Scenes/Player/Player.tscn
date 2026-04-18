@@ -11,7 +11,7 @@ size = Vector2(24, 20)
 
 [node name="Player" type="CharacterBody2D" unique_id=478480706]
 z_index = 6
-collision_mask = 30
+collision_mask = 158
 script = ExtResource("1_ft8w5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=850787347]

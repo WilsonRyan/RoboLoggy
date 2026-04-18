@@ -5,6 +5,8 @@ signal on_player_takes_dmg
 signal on_player_hits_wall
 signal on_player_moves_with_pickup(dest: Vector2i)
 signal on_all_packages_delivered()
+signal on_package_delivered(pos: Vector2i)
+signal on_player_goes_through_gate()
 
 
 func emit_on_player_takes_dmg() -> void:
@@ -18,3 +20,9 @@ func emit_on_player_moves_with_pickup() -> void:
 
 func emit_on_all_packages_delivered() -> void:
 	on_all_packages_delivered.emit()
+
+func emit_on_package_delivered() -> void:
+	on_package_delivered.emit()
+
+func emit_on_player_goes_through_gate() -> void:
+	on_player_goes_through_gate.emit()

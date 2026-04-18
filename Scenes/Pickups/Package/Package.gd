@@ -27,6 +27,7 @@ func drop_off() -> void:
 	set_deferred("monitoring", false)
 	set_deferred("monitorable", false)
 	global_position += (carry_offset) * -1
+	SignalHub.emit_on_package_delivered()
 	remove_from_group("pickups")
 	if get_tree().get_nodes_in_group("pickups").size() == 0:
 		SignalHub.emit_on_all_packages_delivered()

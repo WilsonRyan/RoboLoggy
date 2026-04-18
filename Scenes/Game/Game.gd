@@ -12,6 +12,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SignalHub.on_player_takes_dmg.connect(on_player_takes_dmg)
+	SignalHub.on_player_goes_through_gate.connect(on_player_goes_through_gate)
 	game_ui.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,6 +30,13 @@ func _unhandled_input(_event: InputEvent) -> void:
 		GameManager.load_main_menu()
 
 
+func player_wins() -> void:
+	print("YOU WIN!")
+	game_ui.show()
+	game_ui.displayWin()
+	player.get_tree().paused = true
+	
+
 func game_over() -> void:
 	game_ui.show()
 	game_ui.displayGameOver()
@@ -42,3 +50,6 @@ func tile_is_wall(tile: Vector2i) -> bool:
 
 func on_player_takes_dmg() -> void:
 	game_over()
+
+func on_player_goes_through_gate() -> void:
+	player_wins()

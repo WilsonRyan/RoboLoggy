@@ -33,3 +33,8 @@ func close() -> void:
 
 func on_all_packages_delivered() -> void:
 	open()
+
+
+func _on_finish_line_body_entered(body: Node2D) -> void:
+	if body is Player:
+		SignalHub.emit_on_player_goes_through_gate()
