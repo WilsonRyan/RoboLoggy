@@ -1,3 +1,8 @@
+2026-04-19 AM
+Pushed: Working pause menu while in game and a level select menu with nonfunctional level buttons
+Learned: How signals and inputs are tracked when the game is paused and unpaused
+Next: Create the first 6 levels and then add them to the level selection menu
+
 2026-04-18 AM
 Pushed: Drop points only accept one package now and walking through an open gate makes the player win! (MVP GAME LOOP COMPELTE)
 Learned: A signal thrown to a scene will activate the Signal for ALL nodes in the group if the Signal is connected in the _ready() function

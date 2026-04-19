@@ -2,6 +2,7 @@ extends Node
 
 const GAME = preload("uid://c7mj1w30cjov5")
 const MENU_MAIN = preload("uid://bp3alwr2gjw0d")
+const LEVEL_SELECT_MENU = preload("uid://dgmv47hfvsbvt")
 
 
 func load_main_menu() -> void:
@@ -12,3 +13,6 @@ func load_game() -> void:
 
 func exit_game() -> void:
 	get_tree().quit()
+
+func load_level_select_menu() -> void:
+	get_tree().change_scene_to_packed(LEVEL_SELECT_MENU)

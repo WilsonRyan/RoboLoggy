@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://dgmv47hfvsbvt"]
+
+[ext_resource type="Script" uid="uid://c670u3fvak2w8" path="res://Scenes/Menus/LevelSelectMenu.gd" id="1_k86fo"]
+[ext_resource type="Texture2D" uid="uid://dr4hmigiyqea1" path="res://Assets/Textures/Tiles/gray.png" id="1_v1tpd"]
+[ext_resource type="LabelSettings" uid="uid://cx4b31u7ylryu" path="res://Resources/Labels/menuTitle_white_42.tres" id="2_k86fo"]
+
+[node name="LevelSelectMenu" type="Control" unique_id=317509851]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k86fo")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1871727493]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_v1tpd")
+
+[node name="MainMenuMC" type="MarginContainer" parent="TextureRect" unique_id=750579585]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 36
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_right = 36
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MainMenuMC" unique_id=924052888]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="TextureRect/MainMenuMC/VBoxContainer" unique_id=1240679750]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Select Lvl"
+label_settings = ExtResource("2_k86fo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="spacerLabel" type="Label" parent="TextureRect/MainMenuMC/VBoxContainer" unique_id=1457440077]
+layout_mode = 2
+text = "
+"
+
+[node name="GridContainer" type="GridContainer" parent="TextureRect/MainMenuMC/VBoxContainer" unique_id=2095048534]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 6
+
+[node name="bottomSpaceLabel" type="Label" parent="TextureRect/MainMenuMC/VBoxContainer" unique_id=169932500]
+layout_mode = 2
+text = "
+
+"

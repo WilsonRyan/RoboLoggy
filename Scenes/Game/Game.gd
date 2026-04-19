@@ -19,15 +19,19 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if tile_is_acid(player._player_tile) == true:
 		game_over()
-	#if tile_is_wall(player._player_tile) == true:
-	#	SignalHub.emit_on_player_hits_wall()
 
 func _unhandled_input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("test") == true:
-		GameManager.load_main_menu()
-	if player.get_tree().paused == true and Input.is_action_just_pressed("escape") == true:
-		player.get_tree().paused = false
-		GameManager.load_main_menu()
+	pass
+	#if get_tree().paused == false and Input.is_action_just_pressed("test") == true:
+		#get_tree().paused = true
+		#game_ui.show()
+		#game_ui.displayPause()
+	#elif get_tree().paused == true and Input.is_action_just_pressed("pause") == true:
+
+	#elif player.get_tree().paused == true and Input.is_action_just_pressed("escape") == true:
+		#player.get_tree().paused = false
+		#GameManager.load_main_menu()
+
 
 
 func player_wins() -> void:
@@ -48,8 +52,11 @@ func tile_is_acid(tile: Vector2i) -> bool:
 func tile_is_wall(tile: Vector2i) -> bool:
 	return tile in wall_tiles.get_used_cells()
 
+
+
 func on_player_takes_dmg() -> void:
 	game_over()
 
 func on_player_goes_through_gate() -> void:
 	player_wins()
+	

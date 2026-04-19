@@ -9,6 +9,7 @@ font = ExtResource("3_iq8cv")
 font_size = 54
 
 [node name="GameUI" type="Control" unique_id=613047463]
+process_mode = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -92,6 +93,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="WinUI" type="Control" parent="." unique_id=1495538556]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -160,6 +162,83 @@ text = "
 layout_mode = 2
 text = "Press Escape
 to return to menu"
+label_settings = SubResource("LabelSettings_jwnss")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PauseUI" type="Control" parent="." unique_id=653188294]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="PauseUI" unique_id=128082267]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.3019608)
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseUI" unique_id=1270246210]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxGameOver" type="VBoxContainer" parent="PauseUI/MarginContainer" unique_id=681459348]
+layout_mode = 2
+
+[node name="LabelTopSpace" type="Label" parent="PauseUI/MarginContainer/VBoxGameOver" unique_id=945008210]
+layout_mode = 2
+text = "
+
+
+
+
+
+
+"
+
+[node name="LabelGameOver" type="Label" parent="PauseUI/MarginContainer/VBoxGameOver" unique_id=202208284]
+layout_mode = 2
+text = "Paused"
+label_settings = ExtResource("2_556m7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelBtwnSpace" type="Label" parent="PauseUI/MarginContainer/VBoxGameOver" unique_id=1538040892]
+layout_mode = 2
+text = "
+
+
+
+
+
+
+"
+
+[node name="LabelPressEscape" type="Label" parent="PauseUI/MarginContainer/VBoxGameOver" unique_id=1775008337]
+layout_mode = 2
+text = "Press Escape
+to return to menu
+
+Press P
+to resume the game"
 label_settings = SubResource("LabelSettings_jwnss")
 horizontal_alignment = 1
 vertical_alignment = 1

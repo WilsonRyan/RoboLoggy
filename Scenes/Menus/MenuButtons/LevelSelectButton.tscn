@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://buti68agyqw2p"]
+
+[ext_resource type="Texture2D" uid="uid://cll2v7c66tc6x" path="res://Assets/Textures/Buttons/button_64x64_yellow.png" id="1_nlx7f"]
+[ext_resource type="Script" uid="uid://dfw3pr63hb1b5" path="res://Scenes/Menus/MenuButtons/LevelSelectButton.gd" id="2_nlx7f"]
+[ext_resource type="FontFile" uid="uid://dmwbsuq6koaeq" path="res://Assets/Fonts/Kenney Thick.ttf" id="3_2egxr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lhojo"]
+font = ExtResource("3_2egxr")
+font_size = 24
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="LevelSelectButton" type="NinePatchRect" unique_id=1712057453]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_nlx7f")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+script = ExtResource("2_nlx7f")
+
+[node name="LevelLabel" type="Label" parent="." unique_id=710715687]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -12.0
+offset_top = -1.0
+offset_right = 14.0
+offset_bottom = 60.0
+grow_horizontal = 2
+text = "99"
+label_settings = SubResource("LabelSettings_lhojo")
+horizontal_alignment = 1
+vertical_alignment = 1
