@@ -1,3 +1,8 @@
+2026-05-12 AM
+Pushed: The first three levels and fixed a bug where the forklifts would move through the finish gate.
+Learned: Remembered how to use and create "New Inherited Scene" as different levels.
+Next: Create the next 3 levels.
+
 2026-04-19 AM
 Pushed: Working pause menu while in game and a level select menu with nonfunctional level buttons
 Learned: How signals and inputs are tracked when the game is paused and unpaused

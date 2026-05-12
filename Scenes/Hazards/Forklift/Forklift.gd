@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 class_name Forklift
 
-#SPEED = .5 is 1 grid square per second
-@export var SPEED: float = 10
+#SPEED = 50 is 1 grid square per second
+@export var SPEED: float = 50
 @export var DIRECTION: Vector2 = Vector2.LEFT
 
 @onready var hitbox: Area2D = $Hitbox
@@ -43,3 +43,7 @@ func face_forward() -> void:
 func _on_turn_timer_timeout() -> void:
 	#turn_around()
 	pass
+
+
+func _on_hitbox_area_entered(_area: Area2D) -> void:
+	turn_around()
