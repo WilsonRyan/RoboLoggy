@@ -1,3 +1,8 @@
+2026-05-13 AM
+Pushed: Levels 4-6. Bug found where forklift turns if a forklift hits the side of it.
+Learned: Getting faster at hotkeys to select and move various scenes in the 2D view.
+Next: Add a forward raycast on forklifts that makes it so that the forklift ONLY turns if it collides on the front end.
+
 2026-05-12 AM
 Pushed: The first three levels and fixed a bug where the forklifts would move through the finish gate.
 Learned: Remembered how to use and create "New Inherited Scene" as different levels.
