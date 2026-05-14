@@ -5,6 +5,7 @@ class_name Forklift
 #SPEED = 50 is 1 grid square per second
 @export var SPEED: float = 50
 @export var DIRECTION: Vector2 = Vector2.LEFT
+@onready var ray_cast_2d: RayCast2D = $RayCast2D
 
 @onready var hitbox: Area2D = $Hitbox
 
@@ -21,7 +22,8 @@ func _process(_delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	var collision = move_and_collide(SPEED * DIRECTION * delta)
 	if collision:
-		turn_around()
+		if ray_cast_2d.collide_with_bodies or ray_cast_2d.collide_with_areas:
+			turn_around()
 
 
 func turn_around() -> void:
@@ -46,4 +48,5 @@ func _on_turn_timer_timeout() -> void:
 
 
 func _on_hitbox_area_entered(_area: Area2D) -> void:
-	turn_around()
+	if ray_cast_2d.collide_with_areas:
+		turn_around()

@@ -1,3 +1,8 @@
+2026-05-14 AM
+Pushed: Forklifts only turn when it hits the front. Level select menu takes player to selected level. Player can play next level when they finish a level.
+Learned: How to use an array of PackedScenes as levels and navigate to them in the Game Manager.
+Next: Level select menu ONLY populates based on the GameManager.Levels array size. After than time to work on a floating moving pallette to cross the acid pits.
+
 2026-05-13 AM
 Pushed: Levels 4-6. Bug found where forklift turns if a forklift hits the side of it.
 Learned: Getting faster at hotkeys to select and move various scenes in the 2D view.

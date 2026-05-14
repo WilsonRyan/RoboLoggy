@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cqdopyy2873is"]
+
+[ext_resource type="Texture2D" uid="uid://cll2v7c66tc6x" path="res://Assets/Textures/Buttons/button_64x64_yellow.png" id="1_w5fgs"]
+[ext_resource type="FontFile" uid="uid://dmwbsuq6koaeq" path="res://Assets/Fonts/Kenney Thick.ttf" id="2_c4yq4"]
+[ext_resource type="Texture2D" uid="uid://bqbckhqaoq4jy" path="res://Assets/Textures/Buttons/buttonPressed_64x64_orange.png" id="2_qp7h0"]
+[ext_resource type="Texture2D" uid="uid://deir28lw0h3qh" path="res://Assets/Textures/Buttons/button_64x64_orange.png" id="3_bgppw"]
+[ext_resource type="Script" uid="uid://bxkt1340iileh" path="res://Scenes/Menus/MenuButtons/LevelButton.gd" id="4_bgppw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tvaev"]
+font = ExtResource("2_c4yq4")
+font_size = 24
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="LevelButton" type="TextureButton" unique_id=866243308]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_w5fgs")
+texture_pressed = ExtResource("2_qp7h0")
+texture_hover = ExtResource("3_bgppw")
+script = ExtResource("4_bgppw")
+
+[node name="LevelLabel" type="Label" parent="." unique_id=206677200]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -12.0
+offset_top = -1.0
+offset_right = 14.0
+offset_bottom = 60.0
+grow_horizontal = 2
+text = "99"
+label_settings = SubResource("LabelSettings_tvaev")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

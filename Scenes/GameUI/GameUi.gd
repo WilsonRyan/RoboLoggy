@@ -4,6 +4,8 @@ extends Control
 @onready var win_ui: Control = $WinUI
 @onready var pause_ui: Control = $PauseUI
 
+var win: bool = false
+var lose: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,14 +14,21 @@ func _ready() -> void:
 	pause_ui.hide()
 
 func _unhandled_input(_event: InputEvent) -> void:
-	if get_tree().paused == true and Input.is_action_just_pressed("pause") == true:
+#resume game from pause menu
+	if get_tree().paused == true and Input.is_action_just_pressed("select") == true and lose == false and win == false:
 		get_tree().paused = false
 		hideUI()
 		hide()
+#Go to menu after you die or during the pause menu
 	elif get_tree().paused == true and Input.is_action_just_pressed("escape") == true:
 		get_tree().paused = false
 		GameManager.load_main_menu()
-	elif get_tree().paused == false and Input.is_action_just_pressed("pause") == true:
+#Go to next level when you win
+	elif get_tree().paused == true and Input.is_action_just_pressed("select") == true and win == true:
+		get_tree().paused = false
+		GameManager.load_level(GameManager.selected_level + 1)
+#pulls up the pause menu
+	elif get_tree().paused == false and Input.is_action_just_pressed("escape") == true and lose == false and win == false:
 		get_tree().paused = true
 		show()
 		displayPause()
@@ -27,9 +36,11 @@ func _unhandled_input(_event: InputEvent) -> void:
 
 func displayGameOver() -> void:
 	game_over_ui.show()
+	lose = true
 
 func displayWin() -> void:
 	win_ui.show()
+	win = true
 
 func displayPause() -> void:
 	pause_ui.show()

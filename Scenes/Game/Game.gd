@@ -8,7 +8,6 @@ extends Node2D
 @onready var wall_tiles: TileMapLayer = $Tiles/WallTiles
 
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SignalHub.on_player_takes_dmg.connect(on_player_takes_dmg)

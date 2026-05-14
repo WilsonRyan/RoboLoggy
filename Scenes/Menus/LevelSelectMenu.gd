@@ -1,7 +1,8 @@
 extends Control
 
 const LEVELS_COUNT: int = 54
-const LEVEL_SELECT_BUTTON = preload("uid://buti68agyqw2p")
+const LEVEL_BUTTON = preload("uid://cqdopyy2873is")
+
 
 @onready var grid_container: GridContainer = $TextureRect/MainMenuMC/VBoxContainer/GridContainer
 
@@ -21,6 +22,6 @@ func _unhandled_input(_event: InputEvent) -> void:
 
 func setup_grid() -> void:
 	for level in range(LEVELS_COUNT):
-		var lb = LEVEL_SELECT_BUTTON.instantiate()
+		var lb = LEVEL_BUTTON.instantiate()
 		lb.setup(str(level+1))
 		grid_container.add_child(lb)
