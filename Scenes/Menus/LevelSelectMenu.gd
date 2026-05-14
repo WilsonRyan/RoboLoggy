@@ -1,6 +1,6 @@
 extends Control
 
-const LEVELS_COUNT: int = 54
+var LEVELS_COUNT: int = GameManager.Levels.size() - 1
 const LEVEL_BUTTON = preload("uid://cqdopyy2873is")
 
 
