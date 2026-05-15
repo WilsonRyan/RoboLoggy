@@ -1,5 +1,5 @@
 2026-05-14 AM
-Pushed: Forklifts only turn when it hits the front. Level select menu takes player to selected level. Player can play next level when they finish a level.
+Pushed: Forklifts only turn when it hits the front. Level select menu takes player to selected level. Player can play next level when they finish a level. Level Select menu only populates with active levels.
 Learned: How to use an array of PackedScenes as levels and navigate to them in the Game Manager.
 Next: Time to work on a floating moving pallette to cross the acid pits.
 
