@@ -1,3 +1,13 @@
+2026-05-19 AM
+Pushed: SaveManager global file so that the game saves what levels you have completed. Can only play the next level that you haven't beat. Play in the menu launches the most recently unlocked level.
+Learned: How to create and access SaveFiles. They are in the C:/Users/ryanw/AppData/Roaming/Godot/app_userdata/RoboLoggy/save.cfg directory by default.
+Next: Put a check mark on the levels that have been completed in the level select menu.
+
+2026-05-15 AM
+Pushed: Nothing. Just updated the devLog with new "next" goal.
+Learned: N/A
+Next: Game saves after each level and only lets you go to the next level if you beat the previous level.
+
 2026-05-14 AM
 Pushed: Forklifts only turn when it hits the front. Level select menu takes player to selected level. Player can play next level when they finish a level. Level Select menu only populates with active levels.
 Learned: How to use an array of PackedScenes as levels and navigate to them in the Game Manager.

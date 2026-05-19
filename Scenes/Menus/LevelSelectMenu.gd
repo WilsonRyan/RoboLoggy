@@ -21,7 +21,8 @@ func _unhandled_input(_event: InputEvent) -> void:
 
 
 func setup_grid() -> void:
-	for level in range(LEVELS_COUNT):
+	print(SaveManager.highest_unlocked_level)
+	for level in range(SaveManager.highest_unlocked_level):
 		var lb = LEVEL_BUTTON.instantiate()
 		lb.setup(str(level+1))
 		grid_container.add_child(lb)

@@ -42,7 +42,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 func select_pressed() -> void:
 	if menu_labels == null: return
 	elif menu_labels[menu_selection] == play_label:
-		GameManager.load_game()
+		GameManager.load_level(SaveManager.highest_unlocked_level)
 	elif menu_labels[menu_selection] == level_label:
 		GameManager.load_level_select_menu()
 	elif menu_labels[menu_selection] == options_label:

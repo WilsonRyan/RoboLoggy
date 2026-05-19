@@ -3,6 +3,7 @@ extends TextureButton
 class_name LevelButton
 
 @onready var level_label: Label = $LevelLabel
+@onready var checkmark: TextureRect = $checkmark
 
 var _level_number: String = "99"
 var level: int = 99

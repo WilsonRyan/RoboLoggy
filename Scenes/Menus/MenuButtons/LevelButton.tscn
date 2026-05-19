@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bqbckhqaoq4jy" path="res://Assets/Textures/Buttons/buttonPressed_64x64_orange.png" id="2_qp7h0"]
 [ext_resource type="Texture2D" uid="uid://deir28lw0h3qh" path="res://Assets/Textures/Buttons/button_64x64_orange.png" id="3_bgppw"]
 [ext_resource type="Script" uid="uid://bxkt1340iileh" path="res://Scenes/Menus/MenuButtons/LevelButton.gd" id="4_bgppw"]
+[ext_resource type="Texture2D" uid="uid://g7pxeok5qg2e" path="res://Assets/Textures/Buttons/green_checkmark.png" id="6_sgcta"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tvaev"]
 font = ExtResource("2_c4yq4")
@@ -34,6 +35,15 @@ text = "99"
 label_settings = SubResource("LabelSettings_tvaev")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="checkmark" type="TextureRect" parent="." unique_id=1296060573]
+visible = false
+layout_mode = 0
+offset_left = 42.0
+offset_top = 38.0
+offset_right = 58.0
+offset_bottom = 54.0
+texture = ExtResource("6_sgcta")
 
 [connection signal="button_down" from="." to="." method="_on_button_down"]
 [connection signal="button_up" from="." to="." method="_on_button_up"]
