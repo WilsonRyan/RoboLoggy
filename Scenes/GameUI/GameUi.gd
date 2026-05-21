@@ -26,6 +26,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 #Go to next level when you win
 	elif get_tree().paused == true and Input.is_action_just_pressed("select") == true and win == true:
 		get_tree().paused = false
+		print(GameManager.selected_level + 1)
 		GameManager.load_level(GameManager.selected_level + 1)
 #pulls up the pause menu
 	elif get_tree().paused == false and Input.is_action_just_pressed("escape") == true and lose == false and win == false:

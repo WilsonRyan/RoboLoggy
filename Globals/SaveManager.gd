@@ -7,7 +7,6 @@ var highest_unlocked_level: int = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print(ProjectSettings.globalize_path(SAVE_PATH))
 	load_progress()
 
 
@@ -28,6 +27,8 @@ func load_progress() -> void:
 	highest_unlocked_level = config.get_value("progress", "highest_unlocked_level", 1)
 
 func complete_level(level_num: int) -> void:
+	if level_num >= GameManager.max_level:
+		return
 	if level_num >= highest_unlocked_level:
 		highest_unlocked_level = level_num + 1
 		save_progress()

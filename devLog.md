@@ -1,7 +1,13 @@
+2026-05-21 AM
+Pushed: Added a check mark on levels that have been completed. Fixed a bug where the forklift moves through the gate. Fixed a bug where the game crashes if you continue afte the final level.
+Test: Full playthrough from level 1-6 worked with save file and progressing in all the various menu options with death.
+Learned: It is safer to use file paths for levels in Global scripts rather than Packed Scenes, then create a function to just load the packed scene based on the file path string.
+Next: Create a pallette that can be moved onto and then carries the player across the acid pits.
+
 2026-05-19 AM
 Pushed: SaveManager global file so that the game saves what levels you have completed. Can only play the next level that you haven't beat. Play in the menu launches the most recently unlocked level.
 Learned: How to create and access SaveFiles. They are in the C:/Users/ryanw/AppData/Roaming/Godot/app_userdata/RoboLoggy/save.cfg directory by default.
-Next: Put a check mark on the levels that have been completed in the level select menu.
+Next: Put a check mark on the levels that have been completed in the level select menu. (Forklift moves through the gate again)
 
 2026-05-15 AM
 Pushed: Nothing. Just updated the devLog with new "next" goal.

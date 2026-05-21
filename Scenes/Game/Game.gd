@@ -34,7 +34,6 @@ func _unhandled_input(_event: InputEvent) -> void:
 
 
 func player_wins() -> void:
-	print("YOU WIN!")
 	SaveManager.complete_level(GameManager.selected_level)
 	game_ui.show()
 	game_ui.displayWin()

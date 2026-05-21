@@ -19,6 +19,8 @@ func _ready() -> void:
 func setup(ln: String) -> void:
 	_level_number = ln
 
+func level_complete() -> void:
+	checkmark.show()
 
 
 func _on_button_down() -> void:

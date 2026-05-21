@@ -21,14 +21,12 @@ func open() -> void:
 	set_deferred("monitoring", false)
 	set_deferred("monitorable", false)
 	closed_collision_shape_2d.set_deferred("disabled", true)
-	print("gate opens")
 
 func close() -> void:
 	animation_player.play("close")
 	set_deferred("monitoring", true)
 	set_deferred("monitorable", true)
 	closed_collision_shape_2d.set_deferred("disabled", false)
-	print("gate closed")
 
 
 func on_all_packages_delivered() -> void:

@@ -31,8 +31,6 @@ func _ready() -> void:
 	_last_tile = _player_tile
 	_map_size = game_grid.get_used_rect().size + Vector2i(-1,-1)
 	camera_clamp((_map_size.x + 2) * 32, (_map_size.y + 2) * 32)
-	#print("Map Size: ", _map_size)
-	#print("Player tile position: ", _player_tile)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

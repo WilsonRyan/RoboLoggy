@@ -48,7 +48,7 @@ SPEED = 25.0
 DIRECTION = Vector2(1, 0)
 
 [node name="Package" parent="Packages" parent_id_path=PackedInt32Array(1343539869) index="0" unique_id=609638376]
-position = Vector2(208, 464)
+position = Vector2(208, 463)
 
 [node name="Package2" parent="Packages" parent_id_path=PackedInt32Array(1343539869) index="1" unique_id=1674654457 instance=ExtResource("3_kus7n")]
 position = Vector2(48, 463)

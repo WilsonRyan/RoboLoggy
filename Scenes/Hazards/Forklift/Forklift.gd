@@ -48,5 +48,5 @@ func _on_turn_timer_timeout() -> void:
 
 
 func _on_hitbox_area_entered(_area: Area2D) -> void:
-	if ray_cast_2d.collide_with_areas:
+	if ray_cast_2d.collide_with_areas or ray_cast_2d.collide_with_bodies:
 		turn_around()

@@ -1,6 +1,6 @@
 extends Control
 
-var LEVELS_COUNT: int = GameManager.Levels.size() - 1
+#var LEVELS_COUNT: int = GameManager.Levels.size() - 1
 const LEVEL_BUTTON = preload("uid://cqdopyy2873is")
 
 
@@ -21,8 +21,9 @@ func _unhandled_input(_event: InputEvent) -> void:
 
 
 func setup_grid() -> void:
-	print(SaveManager.highest_unlocked_level)
 	for level in range(SaveManager.highest_unlocked_level):
 		var lb = LEVEL_BUTTON.instantiate()
 		lb.setup(str(level+1))
 		grid_container.add_child(lb)
+		if level < SaveManager.highest_unlocked_level - 1:
+			lb.level_complete()

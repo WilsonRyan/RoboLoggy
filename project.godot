@@ -17,10 +17,10 @@ config/icon="uid://dmbhn63nh028p"
 
 [autoload]
 
-GameManager="*uid://cmtdypy2xd5qm"
 SignalHub="*uid://dgwkavgrf3jlb"
 GlobalFunctions="*uid://bkxqmv2p5llt6"
 SaveManager="*uid://jf4i3gxcv5fr"
+GameManager="*uid://cmtdypy2xd5qm"
 
 [display]
 

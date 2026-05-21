@@ -4,10 +4,10 @@
 [ext_resource type="Script" uid="uid://dcdwg4ha0np2v" path="res://Scenes/Hazards/Forklift/Forklift.gd" id="1_y6rkg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y6rkg"]
-size = Vector2(59, 28)
+size = Vector2(50, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yy85g"]
-size = Vector2(59, 28)
+size = Vector2(50, 24)
 
 [node name="Forklift" type="CharacterBody2D" unique_id=46054915]
 collision_layer = 2
@@ -19,7 +19,7 @@ position = Vector2(-16, 0)
 texture = ExtResource("1_mji55")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=157278815]
-position = Vector2(-15.5, 0)
+position = Vector2(-16, 0)
 shape = SubResource("RectangleShape2D_y6rkg")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1352390174]
@@ -27,7 +27,7 @@ collision_layer = 2
 collision_mask = 134
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1499249779]
-position = Vector2(-15.5, 0)
+position = Vector2(-16, 0)
 shape = SubResource("RectangleShape2D_yy85g")
 
 [node name="TurnTimer" type="Timer" parent="." unique_id=1898072611]
