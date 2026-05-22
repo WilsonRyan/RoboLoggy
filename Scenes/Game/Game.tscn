@@ -93,3 +93,9 @@ rotation = 3.1415925
 
 [node name="Gate" parent="." unique_id=81968588 instance=ExtResource("10_3586x")]
 position = Vector2(128, 16)
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=627970044]
+volume_db = -4.0
+autoplay = true
+
+[connection signal="finished" from="Music" to="." method="_on_music_finished"]

@@ -18,4 +18,7 @@ texture = ExtResource("1_1gb0h")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1366415735]
 shape = SubResource("RectangleShape2D_j4er7")
 
+[node name="SFX" type="AudioStreamPlayer2D" parent="." unique_id=1211627695]
+volume_db = -2.0
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

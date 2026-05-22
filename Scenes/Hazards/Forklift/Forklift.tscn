@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ct84ccdoiijdo"]
 
-[ext_resource type="Texture2D" uid="uid://b23k0qqdh10tg" path="res://Assets/Textures/64x32_forklift.png" id="1_mji55"]
 [ext_resource type="Script" uid="uid://dcdwg4ha0np2v" path="res://Scenes/Hazards/Forklift/Forklift.gd" id="1_y6rkg"]
+[ext_resource type="Texture2D" uid="uid://bwkuvgxd3ayef" path="res://Assets/Textures/64x32_forklift_alicia.png" id="2_y6rkg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y6rkg"]
 size = Vector2(50, 24)
@@ -16,7 +16,7 @@ script = ExtResource("1_y6rkg")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2025083646]
 position = Vector2(-16, 0)
-texture = ExtResource("1_mji55")
+texture = ExtResource("2_y6rkg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=157278815]
 position = Vector2(-16, 0)

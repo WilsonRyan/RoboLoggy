@@ -18,6 +18,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_81r78")
 
+[node name="SFX" type="AudioStreamPlayer2D" parent="." unique_id=1575681897]
+volume_db = 12.0
+
 [node name="GameOverUI" type="Control" parent="." unique_id=765215919]
 visible = false
 layout_mode = 1

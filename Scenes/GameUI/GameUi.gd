@@ -3,6 +3,7 @@ extends Control
 @onready var game_over_ui: Control = $GameOverUI
 @onready var win_ui: Control = $WinUI
 @onready var pause_ui: Control = $PauseUI
+@onready var sfx: AudioStreamPlayer2D = $SFX
 
 var win: bool = false
 var lose: bool = false
@@ -36,10 +37,14 @@ func _unhandled_input(_event: InputEvent) -> void:
 
 
 func displayGameOver() -> void:
+	sfx.stream = preload("uid://cabu1rbrvgf82")
+	sfx.play()
 	game_over_ui.show()
 	lose = true
 
 func displayWin() -> void:
+	sfx.stream = preload("uid://cufgq3k8wvtu4")
+	sfx.play()
 	win_ui.show()
 	win = true
 

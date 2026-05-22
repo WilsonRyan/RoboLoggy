@@ -104,4 +104,7 @@ collision_mask = 3
 [node name="finishCollisionShape2D" type="CollisionShape2D" parent="finishLine" unique_id=1269253584]
 shape = SubResource("RectangleShape2D_b0alm")
 
+[node name="SFX" type="AudioStreamPlayer2D" parent="." unique_id=341075619]
+volume_db = -3.0
+
 [connection signal="body_entered" from="finishLine" to="." method="_on_finish_line_body_entered"]

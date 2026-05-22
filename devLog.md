@@ -1,8 +1,14 @@
+2026-05-22 AM
+Pushed: All SFX and music added. Removed the "Option" button from the menu.
+Test: All sound plays when needed. Menu options all still work after removing the "Option" button.
+Learned: How to use AudioStreamPlayer. If I have a big game, a global SoundManager would be good to have.
+Next: Publish on Itch.io. V1.0 complete!
+
 2026-05-21 AM
 Pushed: Added a check mark on levels that have been completed. Fixed a bug where the forklift moves through the gate. Fixed a bug where the game crashes if you continue afte the final level.
 Test: Full playthrough from level 1-6 worked with save file and progressing in all the various menu options with death.
 Learned: It is safer to use file paths for levels in Global scripts rather than Packed Scenes, then create a function to just load the packed scene based on the file path string.
-Next: Create a pallette that can be moved onto and then carries the player across the acid pits.
+Next: Jk. No pallettes. Just add SFXs and music then publish the game to Itch.io. SFX for gate opening, dropping box, forklifts, player moving, hitting a wall, losing, and picking up a package.
 
 2026-05-19 AM
 Pushed: SaveManager global file so that the game saves what levels you have completed. Can only play the next level that you haven't beat. Play in the menu launches the most recently unlocked level.

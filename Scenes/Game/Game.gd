@@ -6,13 +6,19 @@ extends Node2D
 @onready var tiles: Node2D = $Tiles
 @onready var game_ui: Control = $CanvasLayer/GameUI
 @onready var wall_tiles: TileMapLayer = $Tiles/WallTiles
+@onready var music: AudioStreamPlayer = $Music
 
+var music_playlist: Array = [
+	preload("uid://cpsl0am8j8k6p"),
+	preload("uid://f24juvi1g02v")
+]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SignalHub.on_player_takes_dmg.connect(on_player_takes_dmg)
 	SignalHub.on_player_goes_through_gate.connect(on_player_goes_through_gate)
 	game_ui.hide()
+	play_random_song()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -31,7 +37,9 @@ func _unhandled_input(_event: InputEvent) -> void:
 		#player.get_tree().paused = false
 		#GameManager.load_main_menu()
 
-
+func play_random_song() -> void:
+	music.stream = music_playlist[randi_range(0,1)]
+	music.play()
 
 func player_wins() -> void:
 	SaveManager.complete_level(GameManager.selected_level)
@@ -59,3 +67,7 @@ func on_player_takes_dmg() -> void:
 func on_player_goes_through_gate() -> void:
 	player_wins()
 	
+
+
+func _on_music_finished() -> void:
+	play_random_song()

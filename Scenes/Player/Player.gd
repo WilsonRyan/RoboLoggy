@@ -12,6 +12,7 @@ class_name Player
 @onready var down_ray_cast_2d: RayCast2D = $RayCasts/down_RayCast2D
 @onready var right_ray_cast_2d: RayCast2D = $RayCasts/right_RayCast2D
 @onready var left_ray_cast_2d: RayCast2D = $RayCasts/left_RayCast2D
+@onready var sfx: AudioStreamPlayer2D = $SFX
 
 var _player_tile: Vector2i = Vector2i.ZERO
 var _map_size: Vector2i = Vector2i.ZERO
@@ -74,6 +75,8 @@ func get_input_direction() -> Vector2i:
 
 func raycast_colliding(ray: RayCast2D) -> bool:
 	if ray.is_colliding() == true:
+		sfx.stream = preload("uid://04q0wnnt1o6i")
+		sfx.play()
 		return true
 	else:
 		return false
@@ -81,6 +84,8 @@ func raycast_colliding(ray: RayCast2D) -> bool:
 func player_move(md: Vector2i) -> void:
 	var dest: Vector2i = _player_tile + md
 	_last_tile = _player_tile
+	sfx.stream = preload("uid://b4b23uteq6yw2")
+	sfx.play()
 	move_player_on_tile(dest)
 
 func move_player_on_tile(tile_coord: Vector2i) -> void:

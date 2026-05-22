@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cpsl0am8j8k6p"
+path="res://.godot/imported/Modern Futuristic City.wav-957eacab557ab9f5cde84f2b5b39e3b5.sample"
+
+[deps]
+
+source_file="res://Assets/Music/Modern Futuristic City.wav"
+dest_files=["res://.godot/imported/Modern Futuristic City.wav-957eacab557ab9f5cde84f2b5b39e3b5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -5,10 +5,13 @@ class_name Gate
 @onready var timer: Timer = $Timer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var closed_collision_shape_2d: CollisionShape2D = $closedCollisionShape2D
+@onready var sfx: AudioStreamPlayer2D = $SFX
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SignalHub.on_all_packages_delivered.connect(on_all_packages_delivered)
+	sfx.stream = preload("uid://cjew66bit7ei6")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,6 +24,7 @@ func open() -> void:
 	set_deferred("monitoring", false)
 	set_deferred("monitorable", false)
 	closed_collision_shape_2d.set_deferred("disabled", true)
+	sfx.play()
 
 func close() -> void:
 	animation_player.play("close")
